@@ -1,0 +1,370 @@
+{
+  "memories": [
+    {
+      "label": "MEMORY 08 - A LITTLE MOMENT",
+      "title": "Oru photo... oru cute-aana aarambam.",
+      "caption": "some days stay with you",
+      "text": "This did not need to be a grand occasion to matter. Sometimes just being together was enough to turn an ordinary day into something I wanted to remember.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": null,
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/1000172291.jpg",
+          "kind": "image",
+          "alt": "Photo 1 from our memory 8",
+          "title": "Hive-la unna mudhal murai paartha nodi...",
+          "message": "Hive app-la naan unna mudhal mudhala paathathu indha photo-la dhaan. Appo theriyala, indha photo ivlo special-aana oru ninaivaa maarum-nu. Aana onnu mattum unmai... idha paatha andha nodiyilirundhu dhaan unna sight adikka aarambichen! \ud83d\ude05\u2764\ufe0f",
+          "width": 2304,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 14 - A LITTLE MOMENT",
+      "title": "Nee anuppina en favourite photo",
+      "caption": "always kept with care",
+      "text": "I like the idea of keeping all the little pieces of this day together. The photographs, the movement, the feeling in between. Looking through them feels like opening a tiny time capsule.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": null,
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4774.jpg",
+          "kind": "image",
+          "alt": "Photo 1 from our memory 14",
+          "title": "Nee anuppina photos-la, en favourite onnu!",
+          "message": "Starting-la nee Instagram-la kooda illa. Enkitta irundhadhu Hive-la paatha un andha ore photo dhaan. Un photos kekkalaama, vendaama-nu romba thayangi... kadaisila dhairiyatha vara vechuttu ketten. Nee 'Idha ippo dhaan kepiya?' nu kettuttu, 5-6 photos anuppina. Naan ivlo yosichu ketta vishayatha, nee avlo azhaga easy-a aakkitta! Nee anuppina andha photos-la, idhu enakku romba pidicha onnu. \ud83d\ude0d\u2764\ufe0f",
+          "width": 3072,
+          "height": 4096
+        }
+      ]
+    },
+    {
+      "label": "A LITTLE MOMENT",
+      "title": "Un birthday, en favourite video \u2764\ufe0f",
+      "caption": "Oru chinna video.",
+      "text": "Indha video-kkaana memory-a inga ezhuthalaam.",
+      "draftText": false,
+      "assets": [
+        {
+          "src": "/media/4746-rotated-left.mp4",
+          "kind": "video",
+          "alt": "Our memory video",
+          "title": "Namma videos-la en favourite.",
+          "message": "Idhu namma videos-la en favourite. Annaiku un birthday... unakku nyabagam irukkum-nu ninaikkiren. Namma kovil poittu, unakku pudicha hotel-ku nee enna kootittu pona. Appo dhaan en mind-la irundhadhellam unkitta sonnen. Nee adha purinjukittu, romba mature-ah badhil sonna. Unmaiya sollanumna, appove naan clean bowled! En friends kitta ellam unna pathi perumaiya sollittu irundhen, nee ippadi pesina, appadi purinjukitta-nu. \u2764\ufe0f"
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 01 - A DAY TOGETHER",
+      "title": "Un kooda irukkumbodhu, naan naana irukken.",
+      "caption": "a little bit of us",
+      "text": "Some days become special in the smallest ways. A smile, a little conversation, a moment we did not know we would want to keep. This is one of those little pages I want to come back to.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": "1",
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/1/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4747.jpg",
+          "kind": "image",
+          "alt": "Photo 1 from our memory 1",
+          "title": "Namma first food street night.",
+          "message": "Oru naal night namma food street ponom... andha place-ku polam-nu nee dhaan sonna-nu ninaikkiren. Namma rendu perum anga ponathu adhu dhaan first time. Nee waffles saapta... andha chinna chinna moments kooda innum enakku nyabagam irukku. Un kooda irukkumbodhu, enakkulla irukkura andha kutty paiyan veliya vandhuduvaan. Edhaiyum yosikkaama sirippen, vilayaaduven, naan naana iruppen. Yen idha solren-na... amma, appa kitta mattum dhaan naan ippadi iruppen. Avangalukku appuram, un kitta dhaan andha maadhiri unara mudinjadhu. Un kooda irukkuradhu enakku avlo comfortable-a irukkum. \u2764\ufe0f",
+          "width": 960,
+          "height": 1280
+        },
+        {
+          "src": "/photos/1/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4750.jpg",
+          "kind": "image",
+          "alt": "Photo 2 from our memory 1",
+          "title": "Namma mudhal selfie \ud83e\udd0d",
+          "message": "Idhu dhaan namma rendu perum serndhu edutha first selfie. Plan pannave illa... aana rendu perum white dress pottuttu vandhirundhom! Andha unexpected matching-um, namma first selfie-yum serndhu, indha photo-va enakku romba special-a aakkiduchu. Marakkave mudiyaadha oru azhagaana ninaivu. \u2764\ufe0f",
+          "width": 1600,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 11 - A LITTLE MOMENT",
+      "title": "Oru random video... avlo cute-aana nee!",
+      "caption": "our own little world",
+      "text": "There is something about a memory that a perfect sentence cannot quite hold. For now, I am leaving these little moments here, with a smile and a heart beside them.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": null,
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4759.mp4",
+          "kind": "video",
+          "alt": "Video 1 from our memory 11",
+          "title": "Movie mudinju, oru cute-aana memory.",
+          "message": "Namma movie paathuttu thirumbi varumbodhu edutha random video idhu. Unmaiya sollanumna... idhula nee konjam chubby-ah, romba cute-ah iruppa! \ud83d\ude05 Summa edutha video dhaan... aana thirumba paakkumbodhellam andha naal nyabagam vandhudum. \u2764\ufe0f"
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 10 - A LITTLE MOMENT",
+      "title": "Namakke theriyaama, oru azhagaana memory.",
+      "caption": "the little things matter",
+      "text": "I like the idea of keeping all the little pieces of this day together. The photographs, the movement, the feeling in between. Looking through them feels like opening a tiny time capsule.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": null,
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4758.jpg",
+          "kind": "image",
+          "alt": "Photo 1 from our memory 10",
+          "title": "Namma first candid-nu ninaikkiren!",
+          "message": "Oru naal office-ku unakku munnadi vandhutten. Apram saapda keezha pogumbodhu, nee appo dhaan office vandhuttu irukken-nu sonna. Unakku wait panni pesumbodhu, Sam namakke theriyaama edutha photo idhu. I think idhu dhaan namma first candid photo. \u2764\ufe0f",
+          "width": 1512,
+          "height": 2688
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 09 - A LITTLE MOMENT",
+      "title": "Nee watermelon, naan lime soda \ud83d\ude05",
+      "caption": "one more smile to keep",
+      "text": "Some days become special in the smallest ways. A smile, a little conversation, a moment we did not know we would want to keep. This is one of those little pages I want to come back to.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": null,
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/1000172295.jpg",
+          "kind": "image",
+          "alt": "Photo 1 from our memory 9",
+          "title": "Kovil poittu, oru juice break.",
+          "message": "Oru naal namma kovil poittu, eppavum pola Tovo pakkathula ukkanthirundhom. Annaiku dhaan anga dance aadunom. Apram Vaishu avaloda friends-oda poitta. Nee thaagama irukku-nu sonna, adhaan indha kadaikku vandhom. Nee eppavum pola watermelon juice, naan as usual lime soda sweet and salt \ud83d\ude05 Anga ukkanthirukkumbodhu edutha photo dhaan idhu.",
+          "width": 2296,
+          "height": 4080
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 07 - A LITTLE MOMENT",
+      "title": "Namma first movie night \ud83d\ude0d",
+      "caption": "press play on a little memory",
+      "text": "There is something about a memory that a perfect sentence cannot quite hold. For now, I am leaving these little moments here, with a smile and a heart beside them.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": null,
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/1000172290.mp4",
+          "kind": "video",
+          "alt": "Video 1 from our memory 7",
+          "title": "Thaai Kizhavi paathuttu, food street-ku.",
+          "message": "Idhu dhaan namma first time serndhu movie paatha night. Thaai Kizhavi padam paathuttu indha food street-ku vandhom. Appo edutha video dhaan idhu. \ud83d\ude0d"
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 13 - A LITTLE MOMENT",
+      "title": "Unna paaka vandha naal.",
+      "caption": "this feeling, right here",
+      "text": "Some days become special in the smallest ways. A smile, a little conversation, a moment we did not know we would want to keep. This is one of those little pages I want to come back to.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": null,
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4764.mp4",
+          "kind": "video",
+          "alt": "Video 1 from our memory 13",
+          "title": "Annaiku Mangoes-la.",
+          "message": "Oru naal unakku odambu seri illa. Appo naan office poittu unna paaka vandhirundhen. Namma Mangoes ponom, anga edutha video dhaan idhu. Nee romba tired-ah irundha, aana enna paathadhula happy-ah irundha. Naan kooda 'Rest edukkalaamla' nu ketten. Apram dhaan thonuchu, appo naan un kooda irukkanum-nu. \u2764\ufe0f"
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 06 - A DAY TOGETHER",
+      "title": "Appo puriyala... sorry di.",
+      "caption": "a page i never want to lose",
+      "text": "I like the idea of keeping all the little pieces of this day together. The photographs, the movement, the feeling in between. Looking through them feels like opening a tiny time capsule.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": "6",
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/6/1000155143.jpg",
+          "kind": "image",
+          "alt": "Photo 1 from our memory 6",
+          "title": "Kodaikanal-la irundhu nee panna video call.",
+          "message": "Nee family-oda Kodaikanal poirundha. Appo unna miss panren, paakanum-nu sanda potten. Nee kooda room-la ellarum irukkaanga, call panna mudiyaadhu-nu sonna. Apram enakkaaga veliya vandhu video call panna, aana pesa maaten-nu sollittu. Naan un situation puriyaama kovathula irundhen. \ud83d\ude41 Sorry di... ellam late-ah dhaan puriyudhu.",
+          "width": 590,
+          "height": 1280
+        },
+        {
+          "src": "/photos/6/1000172294.jpg",
+          "kind": "image",
+          "alt": "Photo 2 from our memory 6",
+          "title": "Pesitte thoongitten \ud83d\ude05",
+          "message": "Oru naal namma pesitte irukkumbodhu naan thoongitten. Appo nee edutha photo dhaan idhu. \ud83d\ude05",
+          "width": 590,
+          "height": 1280
+        },
+        {
+          "src": "/photos/6/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4763.jpg",
+          "kind": "image",
+          "alt": "Photo 3 from our memory 6",
+          "title": "Un kooda oru Sunday video call \u2764\ufe0f",
+          "message": "Oru Sunday namma video call pesittu irundhom. Namma eppavum mostly video call-la dhaan pesuvom. Appo nee edutha photo dhaan idhu. Naan munnadiye sonna maadhiri, nee en inner child-a veliya kondu vandhuduva. Un kooda irukkumbodhu naan romba comfortable-ah iruppen. \u2764\ufe0f",
+          "width": 738,
+          "height": 1600
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 05 - A DAY TOGETHER",
+      "title": "Unakku ooti vitta andha naal \ud83e\udd70",
+      "caption": "keeping this feeling close",
+      "text": "Some days become special in the smallest ways. A smile, a little conversation, a moment we did not know we would want to keep. This is one of those little pages I want to come back to.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": "5",
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/5/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4765.mp4",
+          "kind": "video",
+          "alt": "Video 3 from our memory 5",
+          "title": "Obsession movie-um, namma saapta moment-um.",
+          "message": "Namma Obsession movie paaka ponappo, saaptuttu polam-nu inga vandhom. Appo naan unakku ooti vitten... andha feel romba nalla irundhuchu. \ud83e\udd70 Nee 'Podhum' nu sollitte irundha, naan unakku ooti vittutte irundhen. \ud83d\ude05 Indha video-la kooda, naan satta button podala-nu enna cute-ah thittuva. Adha paakkumbodhu ippovum sirippu varudhu."
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 03 - A DAY TOGETHER",
+      "title": "Nee vaangi kudutha first T-shirt \u2764\ufe0f",
+      "caption": "one for the memory box",
+      "text": "There is something about a memory that a perfect sentence cannot quite hold. For now, I am leaving these little moments here, with a smile and a heart beside them.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": "3",
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/3/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4756.jpg",
+          "kind": "image",
+          "alt": "Photo 1 from our memory 3",
+          "title": "Un surprise, Susmi edutha candid.",
+          "message": "Nee enakku first time oru T-shirt vaangi kudutha. Adha kudukkuradhukku surprise-ah enna koopta. Appo un friend Susmi namma rendu perayum edutha candid photo dhaan idhu. \u2764\ufe0f",
+          "width": 1200,
+          "height": 1600
+        },
+        {
+          "src": "/photos/3/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4757.mp4",
+          "kind": "video",
+          "alt": "Video 2 from our memory 3",
+          "title": "Nee romba nalla ponnu di \ud83e\udd72",
+          "message": "Idhu nee enakku T-shirt vaangi kudutha adhe naal. Namma andha food street-la juice kudichittu irundhom. Appo oru paati saapadu vaangi kettaanga, namma avangalukku juice vaangi kuduthom. Nee romba nalla ponnu di... \ud83e\udd72\u2764\ufe0f"
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 02 - A DAY TOGETHER",
+      "title": "Jimiki-la nee semaya irundha \u2764\ufe0f",
+      "caption": "the day felt softer with you",
+      "text": "I like the idea of keeping all the little pieces of this day together. The photographs, the movement, the feeling in between. Looking through them feels like opening a tiny time capsule.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": "2",
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/2/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4755.mp4",
+          "kind": "video",
+          "alt": "Video 2 from our memory 2",
+          "title": "Unakkaaga vaangina jimiki.",
+          "message": "Oru naal namma office-la neraya shops maadhiri pottirundhaanga. Appo unna indha maadhiri jimiki-la paakanum-nu aasa patten. Adhaan indha jimiki vaanginen. Aana summa solla koodaadhu... nee jimiki-la semaya irundha! \u2764\ufe0f"
+        },
+        {
+          "src": "/photos/2/1000172293.jpg",
+          "kind": "image",
+          "alt": "Photo 1 from our memory 2",
+          "title": "En wallpaper-ku nee ketta proof \ud83d\ude05",
+          "message": "Nee andha jimiki pottirundhappo unna photo eduthen. Adhula nee azhaga irundha, adhaan andha photo-va en wallpaper-la vechen. \ud83e\udd70 Appo nee proof venum-nu indha selfie eduthukkitta. \ud83d\ude05",
+          "width": 1200,
+          "height": 1600
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 12 - A LITTLE MOMENT",
+      "title": "En life movie-oda heroine nee \ud83e\udd70",
+      "caption": "a moment worth remembering",
+      "text": "This did not need to be a grand occasion to matter. Sometimes just being together was enough to turn an ordinary day into something I wanted to remember.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": null,
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/96e2d77e-a037-4cc6-9c00-be4d5d5d5659-1_all_4762.mp4",
+          "kind": "video",
+          "alt": "Video 1 from our memory 12",
+          "title": "Indha dress-la unna paatha andha moment.",
+          "message": "Indha dress-la unna enakku romba pudikkum. Yen-na, unna indha dress-la pantry-la paathen. Nee plate eduthuttu en pakkathula ukkara vandha. Appo anga irundha fan kaathula un mudi asainjuchu. Unna paakkumbodhu padathula heroine introduction vara maadhiri irundhuchu. En life-ngra movie-la nee heroine-ah vandha maadhiri feel aachu. \ud83e\udd70\ud83e\udd70"
+        }
+      ]
+    },
+    {
+      "label": "MEMORY 04 - A DAY TOGETHER",
+      "title": "Edhirpaakaadha un surprise \ud83e\udd70",
+      "caption": "my favourite little moments",
+      "text": "This did not need to be a grand occasion to matter. Sometimes just being together was enough to turn an ordinary day into something I wanted to remember.",
+      "note": "I cannot fit the whole feeling into a photograph. But I can keep this little piece of it here, with you.",
+      "sourceFolder": "4",
+      "draftText": true,
+      "assets": [
+        {
+          "src": "/photos/4/1000172297.mp4",
+          "kind": "video",
+          "alt": "Video 2 from our memory 4",
+          "title": "Enakke theriyaama veettukku vandha nee.",
+          "message": "Nee oorukku poirundhappo namakkulla nalla sanda. Adhukku appuram seriya pesikkala. Nee dhoorama irukkuradhaala dhaan sanda vandhutte irukku, vandhadhum pesikkalaam-nu ninaichen. Aana nee sonna time-ku munnadiye vandhuttu, enakke theriyaama en veettukku vandhu surprise kudutha. Appo enakku gift-um kudutha. Andha moment-la naan second time clean bowled! Unna mattum life-la vittuda koodaadhu-nu ninaichen. \ud83e\udd70\ud83d\ude41"
+        },
+        {
+          "src": "/photos/4/1000172299.jpg",
+          "kind": "image",
+          "alt": "Photo 1 from our memory 4",
+          "title": "nee en azhagi d",
+          "message": "",
+          "width": 2296,
+          "height": 4080
+        }
+      ]
+    }
+  ],
+  "letter": [
+    "Epdi irukka... Idhu letter maadhiri irukkum-nu enakku theriyudhu. Aana naan evlo try panniyum ennaala unkitta pesa mudiyala. Unakku call panni paathen, message panni paathen, un friends mooliyama reach panna paathen, apram en friends mooliyama kooda try pannen. Ippadi edhu panniyum ennaala unna reach panna mudiyala...",
+    "Adhaan ippadi try panren... Nee yosikkalaam, 'Ennada ivan vidave maatraan?' nu...",
+    "Enakkum adhu dhaan theriyala... Naanum unna disturb panna koodaadhu-nu mind-a fix pannippen. Ovvoru thadavayum nee 'Enna vitturu' nu sollumbodhu yosippen... Aana \ud83e\udd72 marubadiyum oru thadava try pannalaam-nu thonidum.",
+    "Enakku puriyudhu, unna suthi neraya prechana irukku. Idhula naanum unakku oru prechanaiya theriyuren-nu... Appadi unakku thonradhukku naanum kaaranam-nu ippo puriyudhu.",
+    "Unkitta eppavum sanda pottutte irundhirukken. Nee pesa stop panradhukku munnadi, kadaisiya sila vaati pesumbodhu solluva...",
+    "'Sanda poda dhaan ippo paaka vandhiya? Sanda poda dhaan call panniya? Ennaala sanda poda mudiyala...' nu. \ud83e\udd72",
+    "Adha kekkumbodhu romba kashtama irukkum. Yen-na, naan normal-ah dhaan pesa vandhiruppen. Aana unakku appadi thonra alavukku naan nadandhukitten...",
+    "Mela nammaloda sila memories paathiruppa... Enakku unna maadhiri love kaatta theriyuma-nu theriyala. Aana naan unna avlo love panren. Adha sariyaa kaatta dhaan theriyala... \u2764\ufe0f",
+    "Oru naal Aaladipatiyan-la namma coffee kudichittu irukkumbodhu, unnoda family story-a full-ah sonna. Apram 'Yosichukkonga' nu sonna. Naanum konja neram amaidhiya irundhen. Neeyum adha purinjukittu, 'Process panreenga-nu puriyudhu... nalla time eduthukkonga' nu sonna.",
+    "En mind-la odinadhu... Indha maadhiri vishayam vera yaarukkaavadhu nadandhu, naan dhoorathula irundhu paathirukken. Aana ippo enakku pudicha ponnukku ivlo pain irukku-ngradha ennaala udane process panna mudiyala...",
+    "Aana adhukku appuram unna vittu poga koodaadhu-nu mudivu pannen. Enga amma, appa kittayum un pain pathi sonnen. Avangalukkum adha purinjukka konjam time aachu... avanga konjam old generation-la. Aana enga ammavukku en mela nambikkai irukku... en decision mela nambikkai irukku.",
+    "Enga ammavukku unna romba pudikkum... \u2764\ufe0f",
+    "Naan appo appo sollirukken-la... 'Family-la payan ready-ah-nu kekkuraanga' nu amma sonnadha. Neeyum kovappaduva. Aana ovvoru thadavayum amma enna summa kalaaikka dhaan keppaanga. Appo ellam naan unna pathi dhaan solluven. Avangalum 'Seri, time eduthuko' nu solliduvaanga.",
+    "Aana idhellam unkitta naan kaattikkala... Unkitta vilayaadradhu enakku pudikkum. Adhula en feelings-a serious-ah sollaama vittutten.",
+    "Most of the time, ennoda feelings-a admit pannaama adamant-ah irundhirukken. Adhu full and full-ah en thappu. Sorry di... \ud83d\ude41",
+    "Nee appo appo solluva, 'Unakku ippo edhuvum thonaadhu... naan pona dhaan nee enna theduva' nu. Aana naan 'Enakku thedala' nu sonnen...",
+    "Yen-na, appo nee evlo dhoorama irundhaalum, en pakkathula irukkura maadhiri dhaan enna paathuppa. Aana ippo pakkathula dhaan irukka... irundhaalum romba dhoorama irukkura maadhiri irukku. \ud83e\udd72",
+    "Unnoda kashtathula naan un kooda irukkanum-nu dhaan ninaichen. Unna vittu poganum-nu ennaikkum ninaichadhu illa...",
+    "Maybe unakku interest poirukkalaam... Aana en memory unakkulla konjamaavadhu irukkum-nu ninaikkiren.",
+    "Appo irundha andha ponnukku enna pudikkum... Ippo irukkura unakkum enna pudikkanum-nu aasa padren. Adhukku dhaan ivlo try panren...",
+    "People change constantly... Oru partner-ah, andha changes-aiyum serthu love pannanum-nu ippo puriyudhu.",
+    "Oruthanga marriage-kku appuram vera maadhiri iruppaanga, kuzhandhaikku appuram vera maadhiri iruppaanga, 40 vayasula vera maadhiri iruppaanga, 60 vayasula vera maadhiri iruppaanga...",
+    "Namma eppavum ore maadhiri irukkura aalai theda koodaadhu... Ovvoru thadavayum adhe person-oda different versions-a dhaan love panrom. Idha purinjukittaale paadhi prechana solve aagum-nu thonudhu.",
+    "Marubadiyum solren... Nee enna evlo hate pannalum, I still love you. Yen-na, naan avlo love unkitta irundhu vaangirukken. Now it's my turn... \u2764\ufe0f"
+  ],
+  "littleNotes": [
+    "I may have used too many hearts on this page. I ran out of better ways to draw what I feel.",
+    "Even the ordinary days with you became things I wanted to remember.",
+    "You do not have to find the right words today. I just wanted you to know you matter to me."
+  ],
+  "orderingNote": "Events follow the exact order supplied by the user. Assets within each folder retain their existing order, with an individual story for every photo and video."
+}
