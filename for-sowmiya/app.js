@@ -162,15 +162,32 @@ async function fetchStory(){
 }
 $('unlock-form').addEventListener('submit',async event=>{
   event.preventDefault();const button=event.currentTarget.querySelector('[type=submit]');
+  if(button.disabled)return;
   button.disabled=true;$('gate-error').textContent='';
+  $('unlock-form').setAttribute('aria-busy','true');
+  $('navigation-loader').showModal();
   try{
     const response=await fetch('/api/unlock',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData($('unlock-form'))))});
     const result=await response.json();
     if(!response.ok)throw new Error(result.error||'The memories could not open. Please try again.');
-    activity.report('security_passed');await fetchStory();$('unlock-form').reset();
+    activity.report('security_passed');await fetchStory();
+    // Keep the transition visible while the first photo decodes, with a bounded wait.
+    const firstPhoto=document.querySelector('#timeline img');
+    if(firstPhoto){
+      let imageWait;
+      try{await Promise.race([firstPhoto.decode().catch(()=>{}),new Promise(resolve=>{imageWait=setTimeout(resolve,2500);})]);}
+      finally{clearTimeout(imageWait);}
+    }
+    $('unlock-form').reset();
   }catch(error){$('gate-error').textContent=error.message;}
-  finally{button.disabled=false;}
+  finally{
+    button.disabled=false;
+    $('unlock-form').removeAttribute('aria-busy');
+    $('navigation-loader').close();
+    if(unlocked)$('memories').focus({preventScroll:true});
+  }
 });
+$('navigation-loader').addEventListener('cancel',event=>event.preventDefault());
 let celebrationTimer;
 function answer(yes){
   activity.report(yes?'answer_yes':'answer_need_time');

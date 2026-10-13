@@ -324,3 +324,15 @@ button,.message-link{position:relative;overflow:hidden}
 @media(max-width:720px){#welcome .secret-stage{padding:0 24px 45px;margin-top:0}#welcome .gate-layout{gap:20px;margin-top:5px}#welcome .gate-aside{padding:10px 0}#welcome .gate-aside h1{font-size:39px;margin:15px 0}#welcome .gate-aside p{font-size:12px}#welcome .gate-card{padding:28px 24px}#welcome .gate-card h2{font-size:25px}.visitor-choice legend{font-size:12px}}
 
 .media-retry{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;background:#29151f;color:#ffe6ef;max-width:90%}
+
+.navigation-loader{padding:0;border:1px solid #bc77944d;border-radius:28px;background:#1b1019;color:#f9dce7;width:min(320px,calc(100vw - 48px));box-shadow:0 24px 100px #0009}
+.navigation-loader::backdrop{background:#0b080ded;backdrop-filter:blur(10px)}
+.navigation-loader-content{text-align:center;padding:38px 24px}
+.loader-heart{display:block;color:#eda8c4;font-size:64px;line-height:1.2;animation:loader-heartbeat 1.4s ease-in-out infinite}
+.navigation-loader p{font-size:17px;line-height:1.6;margin:20px 0;color:#f9dce7}
+.loader-dots{display:flex;justify-content:center;gap:8px}
+.loader-dots i{width:5px;height:5px;background:#eda8c4;border-radius:50%;animation:loader-dot 1.2s ease-in-out infinite}
+.loader-dots i:nth-child(2){animation-delay:.15s}.loader-dots i:nth-child(3){animation-delay:.3s}
+@keyframes loader-heartbeat{50%{transform:scale(1.12);text-shadow:0 0 24px #df74a677}}
+@keyframes loader-dot{50%{opacity:.3;transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){.loader-heart,.loader-dots i{animation:none}}
