@@ -379,7 +379,7 @@ async function playBackgroundMusic() {
 function startBackgroundMusic() {
   if (musicOpened) return;
   musicOpened = true;
-  backgroundMusic.src = './media/kaathalae-kaathalae.mp3?v=skip25';
+  backgroundMusic.src = './media/kaathalae-kaathalae.mp3?v=skip30';
   playBackgroundMusic();
 }
 document.addEventListener('click', playBackgroundMusic);
