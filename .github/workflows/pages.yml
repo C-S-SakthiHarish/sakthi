@@ -6,6 +6,11 @@ on:
       - 'for-sowmiya/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
+    inputs:
+      cancel_deployment:
+        description: 'Stuck Pages deployment ID to cancel before publishing'
+        required: false
+        type: string
 permissions:
   contents: read
   pages: write
@@ -21,6 +26,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
+      - name: Recover a stuck Pages deployment
+        if: github.event_name == 'workflow_dispatch' && inputs.cancel_deployment != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEPLOYMENT_ID: ${{ inputs.cancel_deployment }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          [[ "$DEPLOYMENT_ID" =~ ^[a-zA-Z0-9-]+$ ]] || exit 1
+          gh api --method POST "repos/$REPOSITORY/pages/deployments/$DEPLOYMENT_ID/cancel"
       - uses: actions/configure-pages@v5
       - name: Build static website
         run: python3 for-sowmiya/build_pages.py
