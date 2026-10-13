@@ -1,3 +1,12 @@
+CURRENT PUBLISHING SETUP
+GitHub Pages uses Deploy from a branch: gh-pages, / (root).
+Push source changes to main. The workflow builds the static site, updates gh-pages,
+and explicitly requests a Pages build. Do not change the source to GitHub Actions.
+The built-in pages build and deployment job publishes the website.
+This replaces the old direct deployment setup after a stuck Pages deployment.
+
+HISTORICAL SETUP NOTES (publishing-source steps below are superseded):
+
 PUBLISH USING GITHUB PAGES
 
 1. Commit and push .github/workflows/pages.yml, the root .gitignore,
