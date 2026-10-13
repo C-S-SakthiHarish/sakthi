@@ -21,12 +21,58 @@ function show(view){
 function pauseMemoryVideos(root=document) {
   root.querySelectorAll('video').forEach(video=>video.pause());
 }
-function makeMemoryMedia(asset) {
-  const node=document.createElement(asset.kind==='video'?'video':'img');
-  node.src=asset.src;
-  if(asset.kind==='video'){node.controls=true;node.preload='metadata';node.playsInline=true;node.muted=true;node.defaultMuted=true;node.loop=true;node.autoplay=!motionPaused&&!reducedMotion.matches;node.setAttribute('aria-label',asset.alt||'Our memory video');}
-  else {node.alt=asset.alt||'Our memory photo';if(asset.width&&asset.height){node.width=asset.width;node.height=asset.height;}node.loading='lazy';node.decoding='async';}
+function loadMemoryVideo(video) {
+  if (!video.dataset.src) return;
+  video.preload='metadata';
+  video.src=video.dataset.src;
+  delete video.dataset.src;
+  video.load();
+}
+function makeMemoryMedia(asset, priority=false) {
+  const isVideo=asset.kind==='video';
+  const node=document.createElement(isVideo?'video':'img');
+  if(asset.width&&asset.height){node.width=asset.width;node.height=asset.height;}
+  if(isVideo){
+    node.controls=true;node.preload='none';node.playsInline=true;
+    node.muted=true;node.defaultMuted=true;node.loop=true;
+    node.dataset.src=asset.src;
+    if(asset.poster)node.poster=asset.poster;
+    node.setAttribute('aria-label',asset.alt||'Our memory video');
+    node.addEventListener('pointerdown',()=>loadMemoryVideo(node),{once:true});
+  } else {
+    node.alt=asset.alt||'Our memory photo';
+    node.loading=priority?'eager':'lazy';node.decoding='async';
+    if(priority)node.fetchPriority='high';
+    node.src=asset.src;
+  }
+  node.addEventListener('error',()=>{
+    if(!node.parentElement||node.parentElement.querySelector('.media-retry'))return;
+    const retry=document.createElement('button');
+    retry.className='secondary media-retry';retry.type='button';
+    retry.textContent='Could not load. Tap to retry';
+    retry.addEventListener('click',()=>{
+      retry.remove();
+      if(isVideo){node.dataset.src=asset.src;loadMemoryVideo(node);syncVideos();}
+      else {node.src=asset.src;}
+    });
+    node.parentElement.append(retry);
+  });
+  node.addEventListener(isVideo?'loadeddata':'load',()=>node.parentElement?.querySelector('.media-retry')?.remove());
   return node;
+}
+let videoLoadObserver;
+function observeMemoryVideos(){
+  videoLoadObserver?.disconnect();
+  if(!('IntersectionObserver' in window))return;
+  videoLoadObserver=new IntersectionObserver(entries=>{
+    for(const entry of entries){
+      if(!entry.isIntersecting)continue;
+      loadMemoryVideo(entry.target);
+      videoLoadObserver.unobserve(entry.target);
+    }
+    syncVideos();
+  },{rootMargin:'500px 0px'});
+  document.querySelectorAll('#timeline video').forEach(node=>videoLoadObserver.observe(node));
 }
 let lightboxItems=[],lightboxIndex=0,lightboxLabel='';
 function paintLightbox(){
@@ -53,12 +99,22 @@ function closeMemoryLightbox(){
 
 function syncVideos(){
   document.querySelectorAll('video').forEach(video=>{
-    const visible=!document.hidden&&!motionPaused&&!reducedMotion.matches&&
+    const rect=video.getBoundingClientRect();
+    const onScreen=rect.width>0&&rect.height>0&&rect.bottom>0&&rect.top<innerHeight;
+    const visible=!document.hidden&&onScreen&&
       !video.closest('[hidden]')&&(!$('memory-lightbox').open||video.closest('dialog'));
-    if(visible)video.play().catch(()=>{});
+    if(visible)loadMemoryVideo(video);
+    if(visible&&!motionPaused&&!reducedMotion.matches)video.play().catch(()=>{});
     else video.pause();
   });
 }
+let videoScrollFrame=0;
+function scheduleVideoVisibility(){
+  if(videoScrollFrame)return;
+  videoScrollFrame=requestAnimationFrame(()=>{videoScrollFrame=0;syncVideos();});
+}
+window.addEventListener('scroll',scheduleVideoVisibility,{passive:true});
+window.addEventListener('resize',scheduleVideoVisibility,{passive:true});
 document.addEventListener('visibilitychange',syncVideos);
 function renderStory(story){
   memoryList=story.memories;
@@ -77,7 +133,7 @@ function renderStory(story){
       const card=document.createElement('article');card.className='floating-card';
       card.style.setProperty('--delay',-(number%7)+'s');
       const frame=document.createElement('div');frame.className='media-frame';
-      const media=makeMemoryMedia(asset);frame.append(media);
+      const media=makeMemoryMedia(asset,number===1);frame.append(media);
       const copy=document.createElement('div');copy.className='card-copy';
       const tag=document.createElement('span');tag.className='card-number';
       tag.textContent='MOMENT '+String(number).padStart(2,'0')+' / '+(asset.kind==='video'?'IN MOTION':'A LITTLE STILL');
@@ -102,7 +158,7 @@ function renderStory(story){
 async function fetchStory(){
   const response=await fetch('/api/story',{cache:'no-store'});
   if(!response.ok)throw new Error('Please unlock the memories again.');
-  renderStory(await response.json());unlocked=true;show('memories');activity.watch();startBackgroundMusic();
+  renderStory(await response.json());unlocked=true;show('memories');observeMemoryVideos();activity.watch();startBackgroundMusic();
 }
 $('unlock-form').addEventListener('submit',async event=>{
   event.preventDefault();const button=event.currentTarget.querySelector('[type=submit]');

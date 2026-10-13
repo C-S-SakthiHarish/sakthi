@@ -28,6 +28,15 @@ for memory in story["memories"]:
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
         asset["src"] = "./" + relative.as_posix()
+        if asset.get("poster"):
+            poster = Path(asset["poster"].lstrip("/"))
+            source = (ROOT / poster).resolve()
+            if not source.is_relative_to(ROOT.resolve()) or poster.parts[0] != "media" or source.suffix.lower() != ".jpg" or not source.is_file():
+                raise SystemExit(f"Invalid poster: {poster}")
+            (OUT / poster).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, OUT / poster)
+            asset["poster"] = "./" + poster.as_posix()
+
 (OUT / "story.json").write_text(json.dumps(story, ensure_ascii=True), encoding="utf-8")
 helper = r"""
 // GitHub Pages adapter. Published media is public; this is only an interactive gate.
