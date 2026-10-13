@@ -356,7 +356,7 @@ async function playBackgroundMusic() {
 function startBackgroundMusic() {
   if (musicOpened) return;
   musicOpened = true;
-  backgroundMusic.src = './media/kaathalae-kaathalae.mp3';
+  backgroundMusic.src = './media/kaathalae-kaathalae.mp3?v=skip10';
   playBackgroundMusic();
 }
 document.addEventListener('click', playBackgroundMusic);
