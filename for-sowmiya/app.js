@@ -210,32 +210,28 @@ document.addEventListener('click',event=>{
   button.append(ripple);setTimeout(()=>ripple.remove(),750);
 });
 
-// Optional activity emails. Empty endpoint keeps reporting disabled.
+// Activity emails are enabled when configured, with a visible notice before entry.
 const ACTIVITY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyG-GnwRGiStu8TE8UP41satw8TUaE5TjQ3Tlt3eteF_zg_MGsR4bwH671Q7QhrPdc-AA/exec';
 const activity = (() => {
   const enabled = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(ACTIVITY_ENDPOINT);
   const sent = new Set(), timers = new Map(), visible = new Map();
   const visit = crypto.randomUUID();
-  let consent = false, observer;
+  let observer;
   if (enabled) {
-    const label = document.createElement('label');
-    label.style.cssText = 'display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.6;margin:20px 0';
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.style.cssText = 'width:18px;height:18px;flex:0 0 18px;margin-top:4px';
-    checkbox.addEventListener('change', () => { consent = checkbox.checked; });
-    const copy = document.createElement('span');
-    copy.textContent = 'Allow activity emails to Sakthi: successful entry, viewing photos or the letter, and choosing Yes or Need time. Optional; you can open the memories without sharing.';
-    label.append(checkbox, copy);
-    $('unlock-form').insertBefore(label, $('gate-error'));
+    const notice = document.createElement('p');
+    notice.id = 'activity-notice';
+    notice.style.cssText = 'font-size:13px;line-height:1.6;margin:20px 0';
+    notice.textContent = 'Sakthi receives email notifications when you enter, view the photos or letter, and choose Yes or Need time.';
+    $('unlock-form').insertBefore(notice, $('gate-error'));
   }
   function report(event) {
-    if (!enabled || !consent || sent.has(event)) return;
+    if (!enabled || sent.has(event)) return;
     sent.add(event);
     // A no-CORS request cannot confirm delivery. Never interrupt the memories.
     fetch(ACTIVITY_ENDPOINT, {
       method: 'POST', mode: 'no-cors', credentials: 'omit', keepalive: true,
       headers: {'Content-Type': 'text/plain;charset=UTF-8'},
+      // Legacy endpoint field: enables reporting; does not represent an opt-in.
       body: JSON.stringify({event, visit, consent: true})
     }).catch(() => {});
   }
@@ -248,7 +244,7 @@ const activity = (() => {
     }, 2000));
   }
   function watch() {
-    if (!enabled || !consent || !('IntersectionObserver' in window)) return;
+    if (!enabled || !('IntersectionObserver' in window)) return;
     observer?.disconnect();
     observer = new IntersectionObserver(entries => {
       for (const entry of entries) {

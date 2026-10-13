@@ -15,9 +15,10 @@ SETUP
 6. Share that URL with Codex to connect ACTIVITY_ENDPOINT in app.js and publish.
 
 BEHAVIOR
-An optional unchecked activity-email checkbox appears before entry when configured.
-Without opting in, all memories and buttons work and no activity requests are sent.
-With consent:
+Reporting starts automatically when configured. A notice appears before entry.
+There is no permission checkbox. The legacy consent payload field is retained for
+endpoint compatibility; it is a reporting flag, not evidence of visitor consent.
+Events:
 - Successful questions: one email.
 - A photo/video frame visible at least 25% for 2 continuous seconds in an active tab:
   one photos email.
@@ -40,8 +41,8 @@ To stop: archive the Apps Script deployment and clear ACTIVITY_ENDPOINT.
 Changing Code.gs requires updating its deployment to a new version.
 
 TEST AFTER CONNECTION
-Use an incognito window. Without checking the box, enter and browse: no emails.
-Reload, check the box, answer correctly: entry alert + photos alert after 2 seconds.
+Use an incognito window. Confirm the notice appears and no checkbox is shown.
+Answer correctly: entry alert + photos alert after 2 seconds, automatically.
 Scroll to the letter heading and keep it visible for 2 seconds: letter alert.
 Click each answer: corresponding alert. Repeated same answer should not send again.
 Confirm messages actually arrive in the inbox; browser requests alone aren't proof.
