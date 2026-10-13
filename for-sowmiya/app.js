@@ -277,7 +277,7 @@ const activity = (() => {
     const notice = document.createElement('p');
     notice.id = 'activity-notice';
     notice.style.cssText = 'font-size:13px;line-height:1.6;margin:20px 0';
-    notice.textContent = 'Sakthi receives email notifications when you enter, view the photos or letter, and choose Yes or Need time.';
+    notice.textContent = 'Views and answers are emailed to Sakthi.';
     $('unlock-form').insertBefore(notice, $('gate-error'));
   }
   function report(event) {
