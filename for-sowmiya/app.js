@@ -272,44 +272,22 @@ const backgroundMusic = new Audio();
 backgroundMusic.loop = true;
 backgroundMusic.preload = 'none';
 backgroundMusic.volume = .4;
-let musicWanted = true, musicOpened = false;
-const musicButton = document.createElement('button');
-musicButton.type = 'button';
-musicButton.className = 'music-toggle';
-musicButton.hidden = true;
-document.body.append(musicButton);
-function paintMusicButton() {
-  const playing = !backgroundMusic.paused;
-  musicButton.textContent = playing ? '\u266B Pause music' : '\u266B Play music';
-  musicButton.setAttribute('aria-label', playing ? 'Pause background music' : 'Play background music');
-  musicButton.setAttribute('aria-pressed', String(playing));
-}
+let musicOpened = false, musicStarting = false;
 async function playBackgroundMusic() {
-  if (!musicOpened || !musicWanted || document.hidden) return;
-  try { await backgroundMusic.play(); } catch { /* A browser may require a tap on Play music. */ }
-  paintMusicButton();
+  if (!musicOpened || musicStarting || !backgroundMusic.paused) return;
+  musicStarting = true;
+  try { await backgroundMusic.play(); }
+  catch { /* Retry on the next user interaction if autoplay is blocked. */ }
+  finally { musicStarting = false; }
 }
 function startBackgroundMusic() {
   if (musicOpened) return;
   musicOpened = true;
   backgroundMusic.src = './media/kaathalae-kaathalae.mp3';
-  musicButton.hidden = false;
-  paintMusicButton();
   playBackgroundMusic();
 }
-musicButton.addEventListener('click', () => {
-  if (!backgroundMusic.paused) {
-    musicWanted = false;
-    backgroundMusic.pause();
-  } else {
-    musicWanted = true;
-    playBackgroundMusic();
-  }
-  paintMusicButton();
-});
-backgroundMusic.addEventListener('play', paintMusicButton);
-backgroundMusic.addEventListener('pause', paintMusicButton);
+document.addEventListener('click', playBackgroundMusic);
+document.addEventListener('keydown', playBackgroundMusic);
 document.addEventListener('visibilitychange', () => {
-  if (document.hidden) backgroundMusic.pause();
-  else playBackgroundMusic();
+  if (!document.hidden) playBackgroundMusic();
 });
