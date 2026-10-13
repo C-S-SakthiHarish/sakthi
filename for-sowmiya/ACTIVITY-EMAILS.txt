@@ -1,0 +1,54 @@
+ACTIVITY EMAILS - GOOGLE ENDPOINT CONNECTED
+
+Recipient: sakthiharish01@gmail.com
+The website stays on GitHub Pages. Only small activity reports go to your Google Apps Script.
+No photos, videos, answers, or letter content are uploaded to this service.
+
+SETUP
+1. Sign in to script.google.com with your Gmail account. Create a NEW standalone project.
+2. Paste activity-email.gs into Code.gs and save.
+3. Select setup from the function dropdown, click Run, and authorize sending email.
+   Check your inbox for "Website activity: setup test".
+4. Deploy > New deployment > Web app.
+   Execute as: Me. Who has access: Anyone.
+5. Deploy and copy the web app URL ending in /exec.
+6. Share that URL with Codex to connect ACTIVITY_ENDPOINT in app.js and publish.
+
+BEHAVIOR
+An optional unchecked activity-email checkbox appears before entry when configured.
+Without opting in, all memories and buttons work and no activity requests are sent.
+With consent:
+- Successful questions: one email.
+- A photo/video frame visible at least 25% for 2 continuous seconds in an active tab:
+  one photos email.
+- Letter heading visible at least 25% for 2 continuous seconds in an active tab:
+  one letter email. This does NOT prove the letter was read.
+- Yes / Need time: one email per distinct option per page visit.
+  Clicking both generates both events. Repeating the same choice does not send again.
+- Reloading begins a new anonymous visit. There is no identity tracking.
+- Answer animations stay unchanged and no extra message appears after a click.
+
+LIMITS
+The public endpoint is not authenticated. Reports can be forged, just like the
+browser-only birthday gate can be bypassed. Do not treat a report as proof of who visited.
+Only fixed email text is accepted, recipient is hardcoded, and total emails are capped
+at 40 per India calendar day. Google's remaining quota is also checked.
+Notifications are best effort: browser blocking, network failure, Google limits, or
+a closed tab can prevent delivery. Cross-origin responses are opaque to the website.
+Google handles the request and email; only visit reference and event name are sent.
+To stop: archive the Apps Script deployment and clear ACTIVITY_ENDPOINT.
+Changing Code.gs requires updating its deployment to a new version.
+
+TEST AFTER CONNECTION
+Use an incognito window. Without checking the box, enter and browse: no emails.
+Reload, check the box, answer correctly: entry alert + photos alert after 2 seconds.
+Scroll to the letter heading and keep it visible for 2 seconds: letter alert.
+Click each answer: corresponding alert. Repeated same answer should not send again.
+Confirm messages actually arrive in the inbox; browser requests alone aren't proof.
+
+Google documentation:
+https://developers.google.com/apps-script/guides/web
+https://developers.google.com/apps-script/reference/mail/mail-app
+
+Endpoint checked: valid report Accepted; repeated report Duplicate.
+Inbox delivery must be confirmed by the recipient.

@@ -102,7 +102,7 @@ function renderStory(story){
 async function fetchStory(){
   const response=await fetch('/api/story',{cache:'no-store'});
   if(!response.ok)throw new Error('Please unlock the memories again.');
-  renderStory(await response.json());unlocked=true;show('memories');
+  renderStory(await response.json());unlocked=true;show('memories');activity.watch();
 }
 $('unlock-form').addEventListener('submit',async event=>{
   event.preventDefault();const button=event.currentTarget.querySelector('[type=submit]');
@@ -111,12 +111,13 @@ $('unlock-form').addEventListener('submit',async event=>{
     const response=await fetch('/api/unlock',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData($('unlock-form'))))});
     const result=await response.json();
     if(!response.ok)throw new Error(result.error||'The memories could not open. Please try again.');
-    await fetchStory();$('unlock-form').reset();
+    activity.report('security_passed');await fetchStory();$('unlock-form').reset();
   }catch(error){$('gate-error').textContent=error.message;}
   finally{button.disabled=false;}
 });
 let celebrationTimer;
 function answer(yes){
+  activity.report(yes?'answer_yes':'answer_need_time');
   const layer=$('confetti');
   clearTimeout(celebrationTimer);layer.replaceChildren();layer.classList.toggle('sad-response',!yes);
   if(motionPaused||reducedMotion.matches){
@@ -208,3 +209,64 @@ document.addEventListener('click',event=>{
   ripple.style.top=(event.detail?event.clientY-bounds.top:bounds.height/2)+'px';
   button.append(ripple);setTimeout(()=>ripple.remove(),750);
 });
+
+// Optional activity emails. Empty endpoint keeps reporting disabled.
+const ACTIVITY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyG-GnwRGiStu8TE8UP41satw8TUaE5TjQ3Tlt3eteF_zg_MGsR4bwH671Q7QhrPdc-AA/exec';
+const activity = (() => {
+  const enabled = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(ACTIVITY_ENDPOINT);
+  const sent = new Set(), timers = new Map(), visible = new Map();
+  const visit = crypto.randomUUID();
+  let consent = false, observer;
+  if (enabled) {
+    const label = document.createElement('label');
+    label.style.cssText = 'display:flex;gap:12px;align-items:flex-start;font-size:13px;line-height:1.6;margin:20px 0';
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.style.cssText = 'width:18px;height:18px;flex:0 0 18px;margin-top:4px';
+    checkbox.addEventListener('change', () => { consent = checkbox.checked; });
+    const copy = document.createElement('span');
+    copy.textContent = 'Allow activity emails to Sakthi: successful entry, viewing photos or the letter, and choosing Yes or Need time. Optional; you can open the memories without sharing.';
+    label.append(checkbox, copy);
+    $('unlock-form').insertBefore(label, $('gate-error'));
+  }
+  function report(event) {
+    if (!enabled || !consent || sent.has(event)) return;
+    sent.add(event);
+    // A no-CORS request cannot confirm delivery. Never interrupt the memories.
+    fetch(ACTIVITY_ENDPOINT, {
+      method: 'POST', mode: 'no-cors', credentials: 'omit', keepalive: true,
+      headers: {'Content-Type': 'text/plain;charset=UTF-8'},
+      body: JSON.stringify({event, visit, consent: true})
+    }).catch(() => {});
+  }
+  function schedule(node) {
+    const event = node.dataset.activityEvent;
+    if (!visible.get(node) || document.hidden || sent.has(event) || timers.has(node)) return;
+    timers.set(node, setTimeout(() => {
+      timers.delete(node);
+      if (!document.hidden && visible.get(node)) report(event);
+    }, 2000));
+  }
+  function watch() {
+    if (!enabled || !consent || !('IntersectionObserver' in window)) return;
+    observer?.disconnect();
+    observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        const node = entry.target, inView = entry.isIntersecting && entry.intersectionRatio >= .25;
+        visible.set(node, inView);
+        if (inView) schedule(node);
+        else { clearTimeout(timers.get(node)); timers.delete(node); }
+      }
+    }, {threshold: [0, .25]});
+    document.querySelectorAll('.media-frame, .letter-paper h2').forEach(node => {
+      node.dataset.activityEvent = node.matches('.media-frame') ? 'photos_viewed' : 'letter_viewed';
+      observer.observe(node);
+    });
+  }
+  document.addEventListener('visibilitychange', () => {
+    for (const timer of timers.values()) clearTimeout(timer);
+    timers.clear();
+    if (!document.hidden) for (const node of visible.keys()) schedule(node);
+  });
+  return {report, watch};
+})();
