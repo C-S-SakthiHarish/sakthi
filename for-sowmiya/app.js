@@ -102,7 +102,7 @@ function renderStory(story){
 async function fetchStory(){
   const response=await fetch('/api/story',{cache:'no-store'});
   if(!response.ok)throw new Error('Please unlock the memories again.');
-  renderStory(await response.json());unlocked=true;show('memories');activity.watch();
+  renderStory(await response.json());unlocked=true;show('memories');activity.watch();startBackgroundMusic();
 }
 $('unlock-form').addEventListener('submit',async event=>{
   event.preventDefault();const button=event.currentTarget.querySelector('[type=submit]');
@@ -266,3 +266,50 @@ const activity = (() => {
   });
   return {report, watch};
 })();
+
+// Music starts only after the memories have successfully opened.
+const backgroundMusic = new Audio();
+backgroundMusic.loop = true;
+backgroundMusic.preload = 'none';
+backgroundMusic.volume = .4;
+let musicWanted = true, musicOpened = false;
+const musicButton = document.createElement('button');
+musicButton.type = 'button';
+musicButton.className = 'music-toggle';
+musicButton.hidden = true;
+document.body.append(musicButton);
+function paintMusicButton() {
+  const playing = !backgroundMusic.paused;
+  musicButton.textContent = playing ? '\u266B Pause music' : '\u266B Play music';
+  musicButton.setAttribute('aria-label', playing ? 'Pause background music' : 'Play background music');
+  musicButton.setAttribute('aria-pressed', String(playing));
+}
+async function playBackgroundMusic() {
+  if (!musicOpened || !musicWanted || document.hidden) return;
+  try { await backgroundMusic.play(); } catch { /* A browser may require a tap on Play music. */ }
+  paintMusicButton();
+}
+function startBackgroundMusic() {
+  if (musicOpened) return;
+  musicOpened = true;
+  backgroundMusic.src = './media/kaathalae-kaathalae.mp3';
+  musicButton.hidden = false;
+  paintMusicButton();
+  playBackgroundMusic();
+}
+musicButton.addEventListener('click', () => {
+  if (!backgroundMusic.paused) {
+    musicWanted = false;
+    backgroundMusic.pause();
+  } else {
+    musicWanted = true;
+    playBackgroundMusic();
+  }
+  paintMusicButton();
+});
+backgroundMusic.addEventListener('play', paintMusicButton);
+backgroundMusic.addEventListener('pause', paintMusicButton);
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) backgroundMusic.pause();
+  else playBackgroundMusic();
+});

@@ -64,7 +64,7 @@ class Handler(BaseHTTPRequestHandler):
     def serve_media(self, target):
         import mimetypes
         import re
-        allowed = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".mp4", ".webm", ".mov"}
+        allowed = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".mp4", ".webm", ".mov", ".mp3"}
         if target.suffix.lower() not in allowed:
             return self.reply(404, {"error": "Photo or video not found."})
         size = target.stat().st_size

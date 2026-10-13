@@ -9,6 +9,8 @@ ALLOWED = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".mp4", ".webm", ".mov"}
 if OUT.exists():
     raise SystemExit("_site already exists. Use a fresh checkout/output directory for a clean build.")
 OUT.mkdir()
+(OUT / "media").mkdir()
+shutil.copy2(ROOT / "media" / "kaathalae-kaathalae.mp3", OUT / "media" / "kaathalae-kaathalae.mp3")
 html = (ROOT / "index.html").read_text(encoding="utf-8")
 html = html.replace('href="/style.css"', 'href="./style.css"').replace('src="/app.js"', 'src="./app.js"')
 (OUT / "index.html").write_text(html, encoding="utf-8")

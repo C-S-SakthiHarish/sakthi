@@ -322,3 +322,8 @@ button,.message-link{position:relative;overflow:hidden}
 .visitor-choice input:checked+span{background:linear-gradient(130deg,#a84972,#6a2b50);border-color:#efaac7;color:white;box-shadow:0 4px 15px #9b3d6022}
 .visitor-choice input:focus-visible+span{outline:2px solid #ffc3da;outline-offset:4px}
 @media(max-width:720px){#welcome .secret-stage{padding:0 24px 45px;margin-top:0}#welcome .gate-layout{gap:20px;margin-top:5px}#welcome .gate-aside{padding:10px 0}#welcome .gate-aside h1{font-size:39px;margin:15px 0}#welcome .gate-aside p{font-size:12px}#welcome .gate-card{padding:28px 24px}#welcome .gate-card h2{font-size:25px}.visitor-choice legend{font-size:12px}}
+
+/* Persistent, accessible soundtrack control. */
+.music-toggle{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:80;background:#29151fee;color:#ffe6ef;border:1px solid #c77b9c;border-radius:999px;padding:12px 18px;font-size:13px;box-shadow:0 4px 20px #0006;cursor:pointer;backdrop-filter:blur(12px)}
+.music-toggle[hidden]{display:none}
+.music-toggle:focus-visible{outline:3px solid #ffe6ef;outline-offset:4px}
